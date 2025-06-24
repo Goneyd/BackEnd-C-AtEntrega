@@ -1,0 +1,21 @@
+@page
+@model TuristicaAt.Pages.Detalhes
+
+@{
+    Layout ="Shared/_Layout";
+}
+<h2 class="my-3">@Model.PacoteTuristico.Titulo</h2>
+<div class="row">
+    <div class="col-6">
+        <h4 class="my-3">Mais Info:</h4>
+        <ul>
+            <li><label asp-for="PacoteTuristico.DataDeInicio" ></label> @Model.PacoteTuristico.DataDeInicio</li>
+            <li><label asp-for="PacoteTuristico.Preco" ></label> @Html.DisplayFor(model => model.PacoteTuristico.Preco)</li>
+            <li><label asp-for="Destino.Nome" ></label> @Model.Destino.Nome</li>
+            <li><label asp-for="Destino.Pais" ></label> @Model.Destino.Pais</li>
+        </ul>
+        
+        <a class="btn my-3 btn-primary" asp-page="/Edit" asp-route-id = "@Model.PacoteTuristico.Id">Editar</a>
+        <a class="btn my-3 btn-primary" asp-page="/Reserva/VerificarCadastro" asp-route-id = "@Model.PacoteTuristico.Id">Reservar</a>
+    </div>
+</div>

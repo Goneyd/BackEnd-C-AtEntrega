@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="row justify-content-md-center">
+    @foreach (var item in Model._pacotesTuristicos)
+    {
+        <div class="card col-3 m-3">
+
+            <div class="card-body">
+                <h5 class="card-title">@item.Titulo</h5>
+                <ul>
+                    <li><label asp-for="@item.Preco" ></label> @item.Preco </li>
+                    <li><label asp-for="@item.DataDeInicio" ></label> @item.DataDeInicio</li>
+                    
+                </ul>
+                <a class="btn btn-primary" asp-page="/Detalhes"
+                   asp-route-slug="@item.Titulo.Replace(" ","-").ToLower()"
+                   asp-route-id="@item.Id">Ver mais</a>
+            </div>
+        </div>
+    } 
+</div>

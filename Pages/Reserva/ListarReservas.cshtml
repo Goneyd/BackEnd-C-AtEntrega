@@ -1,0 +1,46 @@
+@page
+@model TuristicaAt.Pages.Reserva.ListarReservas
+
+@{
+    Layout = "Shared/_Layout";
+}
+
+<h1>Reservas</h1>
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-hover table-striped align-middle">
+            <thead class="table-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Reservas[0].DataDeReserva)</th>
+                <th>@Html.DisplayNameFor(model => model.Reservas[0].PrecoTotal)</th>
+                <th>@Html.DisplayNameFor(model => model.Reservas[0].QuantidaDePessoas)</th>
+                <th>Nome do Cliente</th>
+                <th>Email do Cliente</th>
+                <th>Título do Pacote</th>
+                <th>Valor do Pacote</th>
+                <th>Data de Início</th>
+                <th>Destino</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.Reservas)
+            {
+                <tr>
+                    <td>@item.DataDeReserva.ToString("dd/MM/yyyy")</td>
+                    <td>@item.PrecoTotal?.ToString("C")</td>
+                    <td>@item.QuantidaDePessoas</td>
+                    <td>@item.Cliente.Nome</td>
+                    <td>@item.Cliente.Email</td>
+                    <td>@item.PacoteTuristico.Titulo</td>
+                    <td>@item.PacoteTuristico.Preco.ToString("C")</td>
+                    <td>@item.PacoteTuristico.DataDeInicio.ToString("dd/MM/yyyy")</td>
+                    <td>@item.PacoteTuristico.Destino.Nome</td>
+                </tr>
+                
+            }
+            </tbody>
+            </table>
+        </div>
+    </div>
+
