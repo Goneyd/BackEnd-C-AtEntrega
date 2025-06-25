@@ -11,4 +11,5 @@ public interface IServiceReserva
     public Destino ObterDestino(int id);
     public void AlterarPacote(PacoteTuristico pacote);
     public void ExcluirPacote(int Id);
+    public void IncluirReserva(Reserva reserva);
 }

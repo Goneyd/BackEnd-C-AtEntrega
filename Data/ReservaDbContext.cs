@@ -1,9 +1,10 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TuristicaAt.Models;
 
 namespace TuristicaAt.Data;
 
-public class ReservaDbContext : DbContext
+public class ReservaDbContext : IdentityDbContext
 {
     public DbSet<Reserva> Reservas { get; set; }
     public DbSet<Destino> Destinos { get; set; }

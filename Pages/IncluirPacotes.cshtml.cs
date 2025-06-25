@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -5,7 +6,7 @@ using TuristicaAt.Models;
 using TuristicaAt.ServiceMemoria;
 
 namespace TuristicaAt.Pages;
-
+[Authorize]
 public class IncluirPacotes : PageModel
 {
     private IServiceReserva _serviceReserva;

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using TuristicaAt.Data;
@@ -50,14 +51,9 @@ public class Create : PageModel
         {
             return Page();
         }
-
-        PacoteTuristicoEncontrado = _serviceReserva.ObterPacote(id);
-        PrecoTotal = PacoteTuristicoEncontrado.Preco * NovaReserva.QuantidaDePessoas;
-        NovaReserva.PrecoTotal = PrecoTotal;
-        _context.Reservas.Add(NovaReserva);
-        _context.SaveChanges();
         
-        return RedirectToPage("/Pages/Index");
+        _serviceReserva.IncluirReserva(NovaReserva);
+        return RedirectToPage("/Index");
 
     }
 

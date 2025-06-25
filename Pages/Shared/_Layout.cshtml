@@ -30,23 +30,27 @@
              <a class="btn btn-outline-dark nav-link fw-bold w-100" asp-area="" asp-page="/Privacy"
                 style="font-size: 1.2rem; border-radius: 15px;">Privacy</a>
          </li>
-         <li class="nav-item flex-fill text-center">
-             <a class="btn btn-outline-dark nav-link fw-bold w-100" asp-area="" asp-page="/Clientes/Index"
-                style="font-size: 1.2rem; border-radius: 15px;">Clientes</a>
-         </li>
-         <li class="nav-item flex-fill text-center">
-             <a class="btn btn-outline-dark nav-link fw-bold w-100" asp-area="" asp-page="/Reserva/ListarReservas"
-                style="font-size: 1.2rem; border-radius: 15px;">Reservas</a>
-         </li>
-         <li class="nav-item flex-fill text-center">
-             <a class="btn btn-outline-dark nav-link fw-bold w-100" asp-area="" asp-page="/Destinos/Index"
-                style="font-size: 1.2rem; border-radius: 15px;">Destinos</a>
-         </li>
-         <li class="nav-item flex-fill text-center">
-             <a class="btn btn-outline-dark nav-link fw-bold w-100" asp-area="" asp-page="/IncluirPacotes"
-                style="font-size: 1.2rem; border-radius: 15px;">Pacotes</a>
-         </li>
+         @if (User.Identity.IsAuthenticated)
+         {
+             <li class="nav-item flex-fill text-center">
+                 <a class="btn btn-outline-dark nav-link fw-bold w-100" asp-area="" asp-page="/Clientes/Index"
+                    style="font-size: 1.2rem; border-radius: 15px;">Clientes</a>
+             </li>
+             <li class="nav-item flex-fill text-center">
+                 <a class="btn btn-outline-dark nav-link fw-bold w-100" asp-area="" asp-page="/Reserva/ListarReservas"
+                    style="font-size: 1.2rem; border-radius: 15px;">Reservas</a>
+             </li>
+             <li class="nav-item flex-fill text-center">
+                 <a class="btn btn-outline-dark nav-link fw-bold w-100" asp-area="" asp-page="/Destinos/Index"
+                    style="font-size: 1.2rem; border-radius: 15px;">Destinos</a>
+             </li>
+             <li class="nav-item flex-fill text-center">
+                 <a class="btn btn-outline-dark nav-link fw-bold w-100" asp-area="" asp-page="/IncluirPacotes"
+                    style="font-size: 1.2rem; border-radius: 15px;">Pacotes</a>
+             </li>
+         }
      </ul>
+     <partial name="_LoginPartial" />
  </div>
  </div>
         </nav>
